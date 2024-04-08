@@ -39,6 +39,7 @@
             this.lbl_Search = new System.Windows.Forms.Label();
             this.dGView_Produkte = new System.Windows.Forms.DataGridView();
             this.tPage_Login = new System.Windows.Forms.TabPage();
+            this.lbl_Error = new System.Windows.Forms.Label();
             this.lbl_Passwort = new System.Windows.Forms.Label();
             this.btn_Login = new System.Windows.Forms.Button();
             this.lbl_Account = new System.Windows.Forms.Label();
@@ -48,12 +49,11 @@
             this.lbl_InfoAccountName = new System.Windows.Forms.Label();
             this.lbl_Info = new System.Windows.Forms.Label();
             this.tPage_PVerwaltung = new System.Windows.Forms.TabPage();
-            this.tPage_Stats = new System.Windows.Forms.TabPage();
-            this.lbl_Error = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_PNew = new System.Windows.Forms.Button();
-            this.panel_PVerwaltung = new System.Windows.Forms.Panel();
             this.dGView_PVerwaltung = new System.Windows.Forms.DataGridView();
+            this.panel_PVerwaltung = new System.Windows.Forms.Panel();
+            this.btn_PNew = new System.Windows.Forms.Button();
+            this.tPage_Stats = new System.Windows.Forms.TabPage();
             this.tLPanel_Main.SuspendLayout();
             this.panel_Header.SuspendLayout();
             this.tControl_Content.SuspendLayout();
@@ -65,8 +65,8 @@
             this.tPage_Info.SuspendLayout();
             this.tPage_PVerwaltung.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel_PVerwaltung.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGView_PVerwaltung)).BeginInit();
+            this.panel_PVerwaltung.SuspendLayout();
             this.SuspendLayout();
             // 
             // tLPanel_Main
@@ -169,6 +169,7 @@
             this.tBox_Search.Size = new System.Drawing.Size(216, 36);
             this.tBox_Search.TabIndex = 1;
             this.tBox_Search.TabStop = false;
+            this.tBox_Search.TextChanged += new System.EventHandler(this.tBox_Search_TextChanged);
             // 
             // lbl_Search
             // 
@@ -202,10 +203,22 @@
             this.tPage_Login.Location = new System.Drawing.Point(4, 27);
             this.tPage_Login.Name = "tPage_Login";
             this.tPage_Login.Padding = new System.Windows.Forms.Padding(3);
-            this.tPage_Login.Size = new System.Drawing.Size(1083, 366);
+            this.tPage_Login.Size = new System.Drawing.Size(1118, 422);
             this.tPage_Login.TabIndex = 1;
             this.tPage_Login.Text = "Login";
             this.tPage_Login.UseVisualStyleBackColor = true;
+            // 
+            // lbl_Error
+            // 
+            this.lbl_Error.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lbl_Error.AutoSize = true;
+            this.lbl_Error.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Error.Location = new System.Drawing.Point(505, 257);
+            this.lbl_Error.Name = "lbl_Error";
+            this.lbl_Error.Size = new System.Drawing.Size(75, 29);
+            this.lbl_Error.TabIndex = 5;
+            this.lbl_Error.Text = "Error:";
+            this.lbl_Error.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lbl_Passwort
             // 
@@ -270,7 +283,7 @@
             this.tPage_Info.Location = new System.Drawing.Point(4, 27);
             this.tPage_Info.Name = "tPage_Info";
             this.tPage_Info.Padding = new System.Windows.Forms.Padding(3);
-            this.tPage_Info.Size = new System.Drawing.Size(1083, 366);
+            this.tPage_Info.Size = new System.Drawing.Size(1118, 422);
             this.tPage_Info.TabIndex = 2;
             this.tPage_Info.Text = "Info";
             this.tPage_Info.UseVisualStyleBackColor = true;
@@ -306,28 +319,6 @@
             this.tPage_PVerwaltung.Text = "Produkt Verwaltung";
             this.tPage_PVerwaltung.UseVisualStyleBackColor = true;
             // 
-            // tPage_Stats
-            // 
-            this.tPage_Stats.Location = new System.Drawing.Point(4, 27);
-            this.tPage_Stats.Name = "tPage_Stats";
-            this.tPage_Stats.Padding = new System.Windows.Forms.Padding(3);
-            this.tPage_Stats.Size = new System.Drawing.Size(1083, 366);
-            this.tPage_Stats.TabIndex = 4;
-            this.tPage_Stats.Text = "Statistik";
-            this.tPage_Stats.UseVisualStyleBackColor = true;
-            // 
-            // lbl_Error
-            // 
-            this.lbl_Error.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.lbl_Error.AutoSize = true;
-            this.lbl_Error.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Error.Location = new System.Drawing.Point(505, 257);
-            this.lbl_Error.Name = "lbl_Error";
-            this.lbl_Error.Size = new System.Drawing.Size(75, 29);
-            this.lbl_Error.TabIndex = 5;
-            this.lbl_Error.Text = "Error:";
-            this.lbl_Error.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
@@ -343,6 +334,26 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1112, 416);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // dGView_PVerwaltung
+            // 
+            this.dGView_PVerwaltung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGView_PVerwaltung.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dGView_PVerwaltung.Location = new System.Drawing.Point(3, 64);
+            this.dGView_PVerwaltung.Name = "dGView_PVerwaltung";
+            this.dGView_PVerwaltung.RowHeadersWidth = 51;
+            this.dGView_PVerwaltung.RowTemplate.Height = 24;
+            this.dGView_PVerwaltung.Size = new System.Drawing.Size(1106, 356);
+            this.dGView_PVerwaltung.TabIndex = 5;
+            // 
+            // panel_PVerwaltung
+            // 
+            this.panel_PVerwaltung.Controls.Add(this.btn_PNew);
+            this.panel_PVerwaltung.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_PVerwaltung.Location = new System.Drawing.Point(3, 3);
+            this.panel_PVerwaltung.Name = "panel_PVerwaltung";
+            this.panel_PVerwaltung.Size = new System.Drawing.Size(1106, 55);
+            this.panel_PVerwaltung.TabIndex = 4;
+            // 
             // btn_PNew
             // 
             this.btn_PNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -355,25 +366,15 @@
             this.btn_PNew.UseVisualStyleBackColor = true;
             this.btn_PNew.Click += new System.EventHandler(this.btn_PNew_Click);
             // 
-            // panel_PVerwaltung
+            // tPage_Stats
             // 
-            this.panel_PVerwaltung.Controls.Add(this.btn_PNew);
-            this.panel_PVerwaltung.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_PVerwaltung.Location = new System.Drawing.Point(3, 3);
-            this.panel_PVerwaltung.Name = "panel_PVerwaltung";
-            this.panel_PVerwaltung.Size = new System.Drawing.Size(1106, 55);
-            this.panel_PVerwaltung.TabIndex = 4;
-            // 
-            // dGView_PVerwaltung
-            // 
-            this.dGView_PVerwaltung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGView_PVerwaltung.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGView_PVerwaltung.Location = new System.Drawing.Point(3, 64);
-            this.dGView_PVerwaltung.Name = "dGView_PVerwaltung";
-            this.dGView_PVerwaltung.RowHeadersWidth = 51;
-            this.dGView_PVerwaltung.RowTemplate.Height = 24;
-            this.dGView_PVerwaltung.Size = new System.Drawing.Size(1106, 356);
-            this.dGView_PVerwaltung.TabIndex = 5;
+            this.tPage_Stats.Location = new System.Drawing.Point(4, 27);
+            this.tPage_Stats.Name = "tPage_Stats";
+            this.tPage_Stats.Padding = new System.Windows.Forms.Padding(3);
+            this.tPage_Stats.Size = new System.Drawing.Size(1118, 422);
+            this.tPage_Stats.TabIndex = 4;
+            this.tPage_Stats.Text = "Statistik";
+            this.tPage_Stats.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -398,8 +399,8 @@
             this.tPage_Info.PerformLayout();
             this.tPage_PVerwaltung.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel_PVerwaltung.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dGView_PVerwaltung)).EndInit();
+            this.panel_PVerwaltung.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

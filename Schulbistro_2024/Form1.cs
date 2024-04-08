@@ -14,7 +14,7 @@ namespace Schulbistro_2024
 {
     public partial class Form1 : Form
     {
-        Dbase DB;
+        Dbase DB = new Dbase("localhost", "Schulbistro", "root", ""); 
         Produkt_Information PInfo;
         Produkt_Creation PCrea;
 
@@ -25,6 +25,7 @@ namespace Schulbistro_2024
             InitializeComponent();
 
             setup();
+            produktsuche();
         }
 
 
@@ -81,6 +82,15 @@ namespace Schulbistro_2024
         {
             PCrea = new Produkt_Creation();
             PCrea.Show();
+        }
+        private void produktsuche()
+        {
+            dGView_Produkte.DataSource = DB.QueryToDataTable($"SELECT DISTINCT prudukt.Bezeichnung, prudukt.Preis FROM `prudukt` WHERE prudukt.Bezeichnung LIKE '%{tBox_Search.Text}%'");
+        }
+
+        private void tBox_Search_TextChanged(object sender, EventArgs e)
+        {
+            produktsuche();
         }
     }
 }
