@@ -39,16 +39,21 @@
             this.lbl_Search = new System.Windows.Forms.Label();
             this.dGView_Produkte = new System.Windows.Forms.DataGridView();
             this.tPage_Login = new System.Windows.Forms.TabPage();
-            this.btn_Login = new System.Windows.Forms.Button();
-            this.tBox_Passwort = new System.Windows.Forms.TextBox();
-            this.tBox_Account = new System.Windows.Forms.TextBox();
             this.lbl_Passwort = new System.Windows.Forms.Label();
+            this.btn_Login = new System.Windows.Forms.Button();
             this.lbl_Account = new System.Windows.Forms.Label();
+            this.tBox_Account = new System.Windows.Forms.TextBox();
+            this.tBox_Passwort = new System.Windows.Forms.TextBox();
             this.tPage_Info = new System.Windows.Forms.TabPage();
+            this.lbl_InfoAccountName = new System.Windows.Forms.Label();
+            this.lbl_Info = new System.Windows.Forms.Label();
             this.tPage_PVerwaltung = new System.Windows.Forms.TabPage();
             this.tPage_Stats = new System.Windows.Forms.TabPage();
-            this.lbl_Info = new System.Windows.Forms.Label();
-            this.lbl_AccountName = new System.Windows.Forms.Label();
+            this.lbl_Error = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_PNew = new System.Windows.Forms.Button();
+            this.panel_PVerwaltung = new System.Windows.Forms.Panel();
+            this.dGView_PVerwaltung = new System.Windows.Forms.DataGridView();
             this.tLPanel_Main.SuspendLayout();
             this.panel_Header.SuspendLayout();
             this.tControl_Content.SuspendLayout();
@@ -58,6 +63,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGView_Produkte)).BeginInit();
             this.tPage_Login.SuspendLayout();
             this.tPage_Info.SuspendLayout();
+            this.tPage_PVerwaltung.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel_PVerwaltung.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGView_PVerwaltung)).BeginInit();
             this.SuspendLayout();
             // 
             // tLPanel_Main
@@ -73,7 +82,7 @@
             this.tLPanel_Main.RowCount = 2;
             this.tLPanel_Main.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tLPanel_Main.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tLPanel_Main.Size = new System.Drawing.Size(1097, 471);
+            this.tLPanel_Main.Size = new System.Drawing.Size(1132, 527);
             this.tLPanel_Main.TabIndex = 0;
             // 
             // panel_Header
@@ -84,7 +93,7 @@
             this.panel_Header.Location = new System.Drawing.Point(4, 4);
             this.panel_Header.Margin = new System.Windows.Forms.Padding(4);
             this.panel_Header.Name = "panel_Header";
-            this.panel_Header.Size = new System.Drawing.Size(1089, 60);
+            this.panel_Header.Size = new System.Drawing.Size(1124, 60);
             this.panel_Header.TabIndex = 0;
             // 
             // lbl_HeadName
@@ -95,7 +104,7 @@
             this.lbl_HeadName.Location = new System.Drawing.Point(0, 0);
             this.lbl_HeadName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_HeadName.Name = "lbl_HeadName";
-            this.lbl_HeadName.Size = new System.Drawing.Size(1089, 60);
+            this.lbl_HeadName.Size = new System.Drawing.Size(1124, 60);
             this.lbl_HeadName.TabIndex = 0;
             this.lbl_HeadName.Text = "Schulbistro Manna";
             this.lbl_HeadName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -112,7 +121,7 @@
             this.tControl_Content.Location = new System.Drawing.Point(3, 71);
             this.tControl_Content.Name = "tControl_Content";
             this.tControl_Content.SelectedIndex = 0;
-            this.tControl_Content.Size = new System.Drawing.Size(1091, 397);
+            this.tControl_Content.Size = new System.Drawing.Size(1126, 453);
             this.tControl_Content.TabIndex = 1;
             this.tControl_Content.TabStop = false;
             // 
@@ -122,7 +131,7 @@
             this.tPage_Produktsortiment.Location = new System.Drawing.Point(4, 27);
             this.tPage_Produktsortiment.Name = "tPage_Produktsortiment";
             this.tPage_Produktsortiment.Padding = new System.Windows.Forms.Padding(3);
-            this.tPage_Produktsortiment.Size = new System.Drawing.Size(1083, 366);
+            this.tPage_Produktsortiment.Size = new System.Drawing.Size(1118, 422);
             this.tPage_Produktsortiment.TabIndex = 0;
             this.tPage_Produktsortiment.Text = "Produktsortiment";
             this.tPage_Produktsortiment.UseVisualStyleBackColor = true;
@@ -139,7 +148,7 @@
             this.tLPanel_Produkte.RowCount = 2;
             this.tLPanel_Produkte.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tLPanel_Produkte.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tLPanel_Produkte.Size = new System.Drawing.Size(1077, 360);
+            this.tLPanel_Produkte.Size = new System.Drawing.Size(1112, 416);
             this.tLPanel_Produkte.TabIndex = 0;
             // 
             // panel_Search
@@ -149,7 +158,7 @@
             this.panel_Search.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Search.Location = new System.Drawing.Point(3, 3);
             this.panel_Search.Name = "panel_Search";
-            this.panel_Search.Size = new System.Drawing.Size(1071, 48);
+            this.panel_Search.Size = new System.Drawing.Size(1106, 48);
             this.panel_Search.TabIndex = 0;
             // 
             // tBox_Search
@@ -179,11 +188,12 @@
             this.dGView_Produkte.Name = "dGView_Produkte";
             this.dGView_Produkte.RowHeadersWidth = 51;
             this.dGView_Produkte.RowTemplate.Height = 24;
-            this.dGView_Produkte.Size = new System.Drawing.Size(1071, 300);
+            this.dGView_Produkte.Size = new System.Drawing.Size(1106, 356);
             this.dGView_Produkte.TabIndex = 1;
             // 
             // tPage_Login
             // 
+            this.tPage_Login.Controls.Add(this.lbl_Error);
             this.tPage_Login.Controls.Add(this.lbl_Passwort);
             this.tPage_Login.Controls.Add(this.btn_Login);
             this.tPage_Login.Controls.Add(this.lbl_Account);
@@ -197,6 +207,17 @@
             this.tPage_Login.Text = "Login";
             this.tPage_Login.UseVisualStyleBackColor = true;
             // 
+            // lbl_Passwort
+            // 
+            this.lbl_Passwort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lbl_Passwort.AutoSize = true;
+            this.lbl_Passwort.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Passwort.Location = new System.Drawing.Point(356, 115);
+            this.lbl_Passwort.Name = "lbl_Passwort";
+            this.lbl_Passwort.Size = new System.Drawing.Size(124, 29);
+            this.lbl_Passwort.TabIndex = 1;
+            this.lbl_Passwort.Text = "Passwort:";
+            // 
             // btn_Login
             // 
             this.btn_Login.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -208,38 +229,7 @@
             this.btn_Login.TabStop = false;
             this.btn_Login.Text = "Login";
             this.btn_Login.UseVisualStyleBackColor = true;
-            // 
-            // tBox_Passwort
-            // 
-            this.tBox_Passwort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.tBox_Passwort.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBox_Passwort.Location = new System.Drawing.Point(562, 112);
-            this.tBox_Passwort.Name = "tBox_Passwort";
-            this.tBox_Passwort.PasswordChar = '*';
-            this.tBox_Passwort.Size = new System.Drawing.Size(228, 36);
-            this.tBox_Passwort.TabIndex = 3;
-            this.tBox_Passwort.TabStop = false;
-            // 
-            // tBox_Account
-            // 
-            this.tBox_Account.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.tBox_Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBox_Account.Location = new System.Drawing.Point(562, 45);
-            this.tBox_Account.Name = "tBox_Account";
-            this.tBox_Account.Size = new System.Drawing.Size(228, 36);
-            this.tBox_Account.TabIndex = 2;
-            this.tBox_Account.TabStop = false;
-            // 
-            // lbl_Passwort
-            // 
-            this.lbl_Passwort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.lbl_Passwort.AutoSize = true;
-            this.lbl_Passwort.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Passwort.Location = new System.Drawing.Point(356, 115);
-            this.lbl_Passwort.Name = "lbl_Passwort";
-            this.lbl_Passwort.Size = new System.Drawing.Size(124, 29);
-            this.lbl_Passwort.TabIndex = 1;
-            this.lbl_Passwort.Text = "Passwort:";
+            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
             // lbl_Account
             // 
@@ -252,9 +242,30 @@
             this.lbl_Account.TabIndex = 0;
             this.lbl_Account.Text = "Account Name:";
             // 
+            // tBox_Account
+            // 
+            this.tBox_Account.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.tBox_Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBox_Account.Location = new System.Drawing.Point(562, 45);
+            this.tBox_Account.Name = "tBox_Account";
+            this.tBox_Account.Size = new System.Drawing.Size(228, 36);
+            this.tBox_Account.TabIndex = 2;
+            this.tBox_Account.TabStop = false;
+            // 
+            // tBox_Passwort
+            // 
+            this.tBox_Passwort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.tBox_Passwort.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBox_Passwort.Location = new System.Drawing.Point(562, 112);
+            this.tBox_Passwort.Name = "tBox_Passwort";
+            this.tBox_Passwort.PasswordChar = '*';
+            this.tBox_Passwort.Size = new System.Drawing.Size(228, 36);
+            this.tBox_Passwort.TabIndex = 3;
+            this.tBox_Passwort.TabStop = false;
+            // 
             // tPage_Info
             // 
-            this.tPage_Info.Controls.Add(this.lbl_AccountName);
+            this.tPage_Info.Controls.Add(this.lbl_InfoAccountName);
             this.tPage_Info.Controls.Add(this.lbl_Info);
             this.tPage_Info.Location = new System.Drawing.Point(4, 27);
             this.tPage_Info.Name = "tPage_Info";
@@ -264,12 +275,33 @@
             this.tPage_Info.Text = "Info";
             this.tPage_Info.UseVisualStyleBackColor = true;
             // 
+            // lbl_InfoAccountName
+            // 
+            this.lbl_InfoAccountName.AutoSize = true;
+            this.lbl_InfoAccountName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_InfoAccountName.Location = new System.Drawing.Point(245, 63);
+            this.lbl_InfoAccountName.Name = "lbl_InfoAccountName";
+            this.lbl_InfoAccountName.Size = new System.Drawing.Size(72, 29);
+            this.lbl_InfoAccountName.TabIndex = 1;
+            this.lbl_InfoAccountName.Text = "None";
+            // 
+            // lbl_Info
+            // 
+            this.lbl_Info.AutoSize = true;
+            this.lbl_Info.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Info.Location = new System.Drawing.Point(42, 63);
+            this.lbl_Info.Name = "lbl_Info";
+            this.lbl_Info.Size = new System.Drawing.Size(186, 29);
+            this.lbl_Info.TabIndex = 0;
+            this.lbl_Info.Text = "Angemeldet als:";
+            // 
             // tPage_PVerwaltung
             // 
+            this.tPage_PVerwaltung.Controls.Add(this.tableLayoutPanel1);
             this.tPage_PVerwaltung.Location = new System.Drawing.Point(4, 27);
             this.tPage_PVerwaltung.Name = "tPage_PVerwaltung";
             this.tPage_PVerwaltung.Padding = new System.Windows.Forms.Padding(3);
-            this.tPage_PVerwaltung.Size = new System.Drawing.Size(1083, 366);
+            this.tPage_PVerwaltung.Size = new System.Drawing.Size(1118, 422);
             this.tPage_PVerwaltung.TabIndex = 3;
             this.tPage_PVerwaltung.Text = "Produkt Verwaltung";
             this.tPage_PVerwaltung.UseVisualStyleBackColor = true;
@@ -284,31 +316,70 @@
             this.tPage_Stats.Text = "Statistik";
             this.tPage_Stats.UseVisualStyleBackColor = true;
             // 
-            // lbl_Info
+            // lbl_Error
             // 
-            this.lbl_Info.AutoSize = true;
-            this.lbl_Info.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Info.Location = new System.Drawing.Point(42, 63);
-            this.lbl_Info.Name = "lbl_Info";
-            this.lbl_Info.Size = new System.Drawing.Size(186, 29);
-            this.lbl_Info.TabIndex = 0;
-            this.lbl_Info.Text = "Angemeldet als:";
+            this.lbl_Error.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lbl_Error.AutoSize = true;
+            this.lbl_Error.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Error.Location = new System.Drawing.Point(505, 257);
+            this.lbl_Error.Name = "lbl_Error";
+            this.lbl_Error.Size = new System.Drawing.Size(75, 29);
+            this.lbl_Error.TabIndex = 5;
+            this.lbl_Error.Text = "Error:";
+            this.lbl_Error.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // lbl_AccountName
+            // tableLayoutPanel1
             // 
-            this.lbl_AccountName.AutoSize = true;
-            this.lbl_AccountName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_AccountName.Location = new System.Drawing.Point(245, 63);
-            this.lbl_AccountName.Name = "lbl_AccountName";
-            this.lbl_AccountName.Size = new System.Drawing.Size(72, 29);
-            this.lbl_AccountName.TabIndex = 1;
-            this.lbl_AccountName.Text = "None";
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.dGView_PVerwaltung, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel_PVerwaltung, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1112, 416);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // btn_PNew
+            // 
+            this.btn_PNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btn_PNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_PNew.Location = new System.Drawing.Point(449, 12);
+            this.btn_PNew.Name = "btn_PNew";
+            this.btn_PNew.Size = new System.Drawing.Size(215, 30);
+            this.btn_PNew.TabIndex = 3;
+            this.btn_PNew.Text = "Produkt erstellen";
+            this.btn_PNew.UseVisualStyleBackColor = true;
+            this.btn_PNew.Click += new System.EventHandler(this.btn_PNew_Click);
+            // 
+            // panel_PVerwaltung
+            // 
+            this.panel_PVerwaltung.Controls.Add(this.btn_PNew);
+            this.panel_PVerwaltung.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_PVerwaltung.Location = new System.Drawing.Point(3, 3);
+            this.panel_PVerwaltung.Name = "panel_PVerwaltung";
+            this.panel_PVerwaltung.Size = new System.Drawing.Size(1106, 55);
+            this.panel_PVerwaltung.TabIndex = 4;
+            // 
+            // dGView_PVerwaltung
+            // 
+            this.dGView_PVerwaltung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGView_PVerwaltung.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dGView_PVerwaltung.Location = new System.Drawing.Point(3, 64);
+            this.dGView_PVerwaltung.Name = "dGView_PVerwaltung";
+            this.dGView_PVerwaltung.RowHeadersWidth = 51;
+            this.dGView_PVerwaltung.RowTemplate.Height = 24;
+            this.dGView_PVerwaltung.Size = new System.Drawing.Size(1106, 356);
+            this.dGView_PVerwaltung.TabIndex = 5;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1097, 471);
+            this.ClientSize = new System.Drawing.Size(1132, 527);
             this.Controls.Add(this.tLPanel_Main);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
@@ -325,6 +396,10 @@
             this.tPage_Login.PerformLayout();
             this.tPage_Info.ResumeLayout(false);
             this.tPage_Info.PerformLayout();
+            this.tPage_PVerwaltung.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel_PVerwaltung.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dGView_PVerwaltung)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -351,7 +426,12 @@
         private System.Windows.Forms.Label lbl_Passwort;
         private System.Windows.Forms.Label lbl_Account;
         private System.Windows.Forms.Label lbl_Info;
-        private System.Windows.Forms.Label lbl_AccountName;
+        private System.Windows.Forms.Label lbl_InfoAccountName;
+        private System.Windows.Forms.Label lbl_Error;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel_PVerwaltung;
+        private System.Windows.Forms.Button btn_PNew;
+        private System.Windows.Forms.DataGridView dGView_PVerwaltung;
     }
 }
 

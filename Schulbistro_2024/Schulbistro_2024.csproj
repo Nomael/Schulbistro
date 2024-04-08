@@ -79,10 +79,28 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produkt_Creation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produkt_Creation.Designer.cs">
+      <DependentUpon>Produkt_Creation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produkt_Information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produkt_Information.Designer.cs">
+      <DependentUpon>Produkt_Information.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produkt_Creation.resx">
+      <DependentUpon>Produkt_Creation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produkt_Information.resx">
+      <DependentUpon>Produkt_Information.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
