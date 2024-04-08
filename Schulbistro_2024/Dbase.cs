@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySqlConnector;
+using System.Data;
+using System.Windows.Forms;
 
 namespace Schulbistro_2024
 {
@@ -160,6 +163,4 @@ namespace Schulbistro_2024
         }
 
     }
-}
-
 }

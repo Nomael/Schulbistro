@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Schulbistro_2024;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Pulsdaten
+namespace Schulbistro_2024
 {
     public partial class Form1 : Form
     {
@@ -18,4 +19,5 @@ namespace Pulsdaten
         {
             InitializeComponent();
         }
+    }
 }
