@@ -50,7 +50,7 @@ namespace Schulbistro_2024
 
             btnInfo.HeaderText = "";
             btnInfo.Name = "btn_Info";
-            btnInfo.Text = "Info";
+            btnInfo.Text = "More Info";
             btnInfo.UseColumnTextForButtonValue = true;
 
             btnEdit.HeaderText = "";
@@ -123,7 +123,9 @@ namespace Schulbistro_2024
         {
             if (e.ColumnIndex == 0 && e.RowIndex < dGView_Produkte.RowCount) // Info
             {
-                MessageBox.Show($"{dGView_Produkte.Rows[e.RowIndex].Cells[1].Value}, {dGView_Produkte.Rows[e.RowIndex].Cells[2].Value}, {dGView_Produkte.Rows[e.RowIndex].Cells[3].Value}");
+                //MessageBox.Show($"{dGView_Produkte.Rows[e.RowIndex].Cells[1].Value}, {dGView_Produkte.Rows[e.RowIndex].Cells[2].Value}, {dGView_Produkte.Rows[e.RowIndex].Cells[3].Value}");
+                PInfo = new Produkt_Information(dGView_Produkte.Rows[e.RowIndex].Cells[1].Value.ToString(), dGView_Produkte.Rows[e.RowIndex].Cells[2].Value.ToString());
+                PInfo.Show();
             }
         }
 
