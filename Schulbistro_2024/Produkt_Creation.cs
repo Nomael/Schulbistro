@@ -18,7 +18,7 @@ namespace Schulbistro_2024
         {
             InitializeComponent();
 
-            loadKategorie();
+            loadComboBoxen();
         }
 
         private void btn_Close_Click(object sender, EventArgs e)
@@ -31,9 +31,18 @@ namespace Schulbistro_2024
 
         }
 
-        private void loadKategorie()
+        private void loadComboBoxen()
         {
-            cBox_Kategorie.Items.Add(DB.QueryString($"SELECT kategorie.Bezeichnung FROM `kategorie`"));
+            List<string> liste = DB.QueryToList($"SELECT kategorie.Bezeichnung FROM `kategorie` ");
+            foreach (string i in liste)
+            {
+                cBox_Kategorie.Items.Add(i);
+            }
+            liste = DB.QueryToList($"SELECT ampelstatus.Farbe FROM `ampelstatus`");
+            foreach (string i in liste)
+            {
+               cBox_Ampel.Items.Add(i);
+            }
         }
     }
 }
