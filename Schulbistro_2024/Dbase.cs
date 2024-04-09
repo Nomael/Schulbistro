@@ -67,6 +67,37 @@ namespace Schulbistro_2024
             }
         }
 
+        public List<string[]> QueryToArrayList(string _query)
+        {
+            List<string[]> listData = new List<string[]>();
+            string[] row;
+            try
+            {
+                connection.Open();
+                command = new MySqlCommand(_query, connection);
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    row = new string[reader.FieldCount];
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        row[i] = reader[i].ToString();
+                    }
+                    listData.Add(row);
+                }
+                reader.Close();
+                connection.Close();
+                return listData;
+            }
+            catch (MySqlException ex)
+            {
+                if (connection != null && connection.State == System.Data.ConnectionState.Open)
+                    connection.Close();
+                MessageBox.Show(ex.Message + $"\n\n{_query}", "Datenbank Query-Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return new List<string[]>();
+            }
+        }
+
         public List<string> QueryToList(string query)
         {
             List<string> list = new List<string>();

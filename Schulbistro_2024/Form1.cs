@@ -104,7 +104,7 @@ namespace Schulbistro_2024
         }
         private void produktsuche(DataGridView dGV, string search)
         {
-            string query = $"SELECT prudukt.Bezeichnung, prudukt.Preis, prudukt.info FROM `prudukt` WHERE prudukt.Bezeichnung LIKE '%{search}%'";
+            string query = $"SELECT prudukt.Bezeichnung, prudukt.info AS Info, prudukt.Preis FROM `prudukt` WHERE prudukt.Bezeichnung LIKE '%{search}%'";
             dGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dGV.DataSource = DB.QueryToDataTable(query);
         }
@@ -124,7 +124,7 @@ namespace Schulbistro_2024
             if (e.ColumnIndex == 0 && e.RowIndex < dGView_Produkte.RowCount) // Info
             {
                 //MessageBox.Show($"{dGView_Produkte.Rows[e.RowIndex].Cells[1].Value}, {dGView_Produkte.Rows[e.RowIndex].Cells[2].Value}, {dGView_Produkte.Rows[e.RowIndex].Cells[3].Value}");
-                PInfo = new Produkt_Information(dGView_Produkte.Rows[e.RowIndex].Cells[1].Value.ToString(), dGView_Produkte.Rows[e.RowIndex].Cells[2].Value.ToString());
+                PInfo = new Produkt_Information(dGView_Produkte.Rows[e.RowIndex].Cells[1].Value.ToString(), dGView_Produkte.Rows[e.RowIndex].Cells[2].Value.ToString(), dGView_Produkte.Rows[e.RowIndex].Cells[3].Value.ToString());
                 PInfo.Show();
             }
         }
