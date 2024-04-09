@@ -32,6 +32,7 @@ namespace Schulbistro_2024
         private void btnCreate_Click(object sender, EventArgs e)
         {
             CreateProdukt();
+            this.Close();
         }
 
         private void loadComboBoxen()

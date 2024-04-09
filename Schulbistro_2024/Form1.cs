@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Schulbistro_2024
 {
@@ -17,6 +18,7 @@ namespace Schulbistro_2024
         Dbase DB = new Dbase("localhost", "Schulbistro", "root", "");
         Produkt_Information PInfo;
         Produkt_Creation PCrea;
+        Produkt_Edit PEdit;
         private readonly DataGridViewButtonColumn btnInfo = new DataGridViewButtonColumn();
         private readonly DataGridViewButtonColumn btnEdit = new DataGridViewButtonColumn();
         private readonly DataGridViewButtonColumn btnDelete = new DataGridViewButtonColumn();
@@ -133,7 +135,8 @@ namespace Schulbistro_2024
         {
             if (e.ColumnIndex == 0 && e.RowIndex < dGView_Produkte.RowCount) // Edit
             {
-
+                PEdit = new Produkt_Edit(dGView_Produkte.Rows[e.RowIndex].Cells[1].Value.ToString(), dGView_Produkte.Rows[e.RowIndex].Cells[2].Value.ToString(), dGView_Produkte.Rows[e.RowIndex].Cells[3].Value.ToString());
+                PEdit.Show();
             }
             else if (e.ColumnIndex == 1 && e.RowIndex < dGView_Produkte.RowCount) // Delete
             {
