@@ -29,6 +29,10 @@ namespace Schulbistro_2024
 
             setup();
 
+            tBox_Account.Text = "admin";
+            tBox_Passwort.Text = "Manna!2024";
+
+
             dGView_Produkte.Columns.Add(btnInfo);
             dGView_PVerwaltung.Columns.Add(btnEdit);
             dGView_PVerwaltung.Columns.Add(btnDelete);

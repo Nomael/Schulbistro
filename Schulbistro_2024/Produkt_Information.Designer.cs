@@ -54,7 +54,7 @@
             // 
             this.lbl_Name.AutoSize = true;
             this.lbl_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Name.Location = new System.Drawing.Point(13, 13);
+            this.lbl_Name.Location = new System.Drawing.Point(16, 39);
             this.lbl_Name.Name = "lbl_Name";
             this.lbl_Name.Size = new System.Drawing.Size(102, 25);
             this.lbl_Name.TabIndex = 1;
@@ -64,7 +64,7 @@
             // 
             this.lbl_Info.AutoSize = true;
             this.lbl_Info.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Info.Location = new System.Drawing.Point(18, 42);
+            this.lbl_Info.Location = new System.Drawing.Point(21, 68);
             this.lbl_Info.Name = "lbl_Info";
             this.lbl_Info.Size = new System.Drawing.Size(62, 20);
             this.lbl_Info.TabIndex = 2;
@@ -73,7 +73,7 @@
             // lbl_Ampel
             // 
             this.lbl_Ampel.AutoSize = true;
-            this.lbl_Ampel.Location = new System.Drawing.Point(22, 147);
+            this.lbl_Ampel.Location = new System.Drawing.Point(25, 173);
             this.lbl_Ampel.Name = "lbl_Ampel";
             this.lbl_Ampel.Size = new System.Drawing.Size(67, 16);
             this.lbl_Ampel.TabIndex = 3;
@@ -82,7 +82,7 @@
             // lbl_Allegen
             // 
             this.lbl_Allegen.AutoSize = true;
-            this.lbl_Allegen.Location = new System.Drawing.Point(22, 190);
+            this.lbl_Allegen.Location = new System.Drawing.Point(25, 216);
             this.lbl_Allegen.Name = "lbl_Allegen";
             this.lbl_Allegen.Size = new System.Drawing.Size(78, 16);
             this.lbl_Allegen.TabIndex = 4;
@@ -91,7 +91,7 @@
             // lbl_Zusatzstoffe
             // 
             this.lbl_Zusatzstoffe.AutoSize = true;
-            this.lbl_Zusatzstoffe.Location = new System.Drawing.Point(22, 233);
+            this.lbl_Zusatzstoffe.Location = new System.Drawing.Point(25, 259);
             this.lbl_Zusatzstoffe.Name = "lbl_Zusatzstoffe";
             this.lbl_Zusatzstoffe.Size = new System.Drawing.Size(99, 16);
             this.lbl_Zusatzstoffe.TabIndex = 5;
@@ -100,7 +100,7 @@
             // lbl_Kategorie
             // 
             this.lbl_Kategorie.AutoSize = true;
-            this.lbl_Kategorie.Location = new System.Drawing.Point(22, 107);
+            this.lbl_Kategorie.Location = new System.Drawing.Point(25, 133);
             this.lbl_Kategorie.Name = "lbl_Kategorie";
             this.lbl_Kategorie.Size = new System.Drawing.Size(86, 16);
             this.lbl_Kategorie.TabIndex = 6;
@@ -110,7 +110,7 @@
             // 
             this.lbl_Preis.AutoSize = true;
             this.lbl_Preis.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Preis.Location = new System.Drawing.Point(18, 62);
+            this.lbl_Preis.Location = new System.Drawing.Point(21, 88);
             this.lbl_Preis.Name = "lbl_Preis";
             this.lbl_Preis.Size = new System.Drawing.Size(74, 20);
             this.lbl_Preis.TabIndex = 7;
