@@ -16,6 +16,8 @@ namespace Schulbistro_2024
     public partial class Form1 : Form
     {
         Dbase DB = new Dbase("localhost", "Schulbistro", "root", "");
+        List<string[]> chart = new List<string[]>();
+        List<string> produkte = new List<string>();
         Produkt_Information PInfo;
         Produkt_Creation PCrea;
         Produkt_Edit PEdit;
@@ -33,14 +35,6 @@ namespace Schulbistro_2024
 
             tBox_Account.Text = "admin";
             tBox_Passwort.Text = "Manna!2024";
-
-
-            dGView_Produkte.Columns.Add(btnInfo);
-            dGView_PVerwaltung.Columns.Add(btnEdit);
-            dGView_PVerwaltung.Columns.Add(btnDelete);
-
-            produktsuche(dGView_Produkte, tBox_Search.Text);
-            produktsuche(dGView_PVerwaltung, tBox_PVSuche.Text);
         }
 
 
@@ -64,6 +58,17 @@ namespace Schulbistro_2024
             btnDelete.Name = "btn_Delete";
             btnDelete.Text = "Delete";
             btnDelete.UseColumnTextForButtonValue = true;
+
+
+            dGView_Produkte.Columns.Add(btnInfo);
+            dGView_PVerwaltung.Columns.Add(btnEdit);
+            dGView_PVerwaltung.Columns.Add(btnDelete);
+
+            produktsuche(dGView_Produkte, tBox_Search.Text);
+            produktsuche(dGView_PVerwaltung, tBox_PVSuche.Text);
+
+            produkte = DB.QueryToList($"SELECT DISTINCT prudukt.Bezeichnung FROM `prudukt`");
+            cBox_SProdukte.DataSource = produkte;
         }
 
         private void btn_Login_Click(object sender, EventArgs e)
@@ -142,6 +147,12 @@ namespace Schulbistro_2024
             {
 
             }
+        }
+
+        private void cBox_SProdukte_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            chart = DB.QueryToArrayList($"SELECT verkaufsstatistik.Datum, verkaufsstatistik.Verkaufsmenge FROM verkaufsstatistik, prudukt WHERE prudukt.P_Nr = '{cBox_SProdukte.SelectedIndex + 1}' AND prudukt.P_Nr = verkaufsstatistik.P_Nr;");
+            MessageBox.Show(chart[0][0] + "|" + chart[0][1]);
         }
     }
 }

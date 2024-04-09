@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tLPanel_Main = new System.Windows.Forms.TableLayoutPanel();
             this.panel_Header = new System.Windows.Forms.Panel();
             this.lbl_HeadName = new System.Windows.Forms.Label();
@@ -53,6 +56,12 @@
             this.lbl_PVSuche = new System.Windows.Forms.Label();
             this.dGView_PVerwaltung = new System.Windows.Forms.DataGridView();
             this.tPage_Stats = new System.Windows.Forms.TabPage();
+            this.tLPanel_Stats = new System.Windows.Forms.TableLayoutPanel();
+            this.panel_SProdukt = new System.Windows.Forms.Panel();
+            this.lbl_SProdukt = new System.Windows.Forms.Label();
+            this.cBox_SProdukte = new System.Windows.Forms.ComboBox();
+            this.panel_SChart = new System.Windows.Forms.Panel();
+            this.chart_Stats = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tLPanel_Main.SuspendLayout();
             this.panel_Header.SuspendLayout();
             this.tControl_Content.SuspendLayout();
@@ -65,6 +74,11 @@
             this.tLPanel_PVerwaltung.SuspendLayout();
             this.panel_PVerwaltung.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGView_PVerwaltung)).BeginInit();
+            this.tPage_Stats.SuspendLayout();
+            this.tLPanel_Stats.SuspendLayout();
+            this.panel_SProdukt.SuspendLayout();
+            this.panel_SChart.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_Stats)).BeginInit();
             this.SuspendLayout();
             // 
             // tLPanel_Main
@@ -365,6 +379,7 @@
             // 
             // tPage_Stats
             // 
+            this.tPage_Stats.Controls.Add(this.tLPanel_Stats);
             this.tPage_Stats.Location = new System.Drawing.Point(4, 27);
             this.tPage_Stats.Name = "tPage_Stats";
             this.tPage_Stats.Padding = new System.Windows.Forms.Padding(3);
@@ -372,6 +387,77 @@
             this.tPage_Stats.TabIndex = 4;
             this.tPage_Stats.Text = "Statistik";
             this.tPage_Stats.UseVisualStyleBackColor = true;
+            // 
+            // tLPanel_Stats
+            // 
+            this.tLPanel_Stats.ColumnCount = 1;
+            this.tLPanel_Stats.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tLPanel_Stats.Controls.Add(this.panel_SChart, 0, 1);
+            this.tLPanel_Stats.Controls.Add(this.panel_SProdukt, 0, 0);
+            this.tLPanel_Stats.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tLPanel_Stats.Location = new System.Drawing.Point(3, 3);
+            this.tLPanel_Stats.Name = "tLPanel_Stats";
+            this.tLPanel_Stats.RowCount = 2;
+            this.tLPanel_Stats.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tLPanel_Stats.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tLPanel_Stats.Size = new System.Drawing.Size(1112, 416);
+            this.tLPanel_Stats.TabIndex = 1;
+            // 
+            // panel_SProdukt
+            // 
+            this.panel_SProdukt.Controls.Add(this.cBox_SProdukte);
+            this.panel_SProdukt.Controls.Add(this.lbl_SProdukt);
+            this.panel_SProdukt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_SProdukt.Location = new System.Drawing.Point(3, 3);
+            this.panel_SProdukt.Name = "panel_SProdukt";
+            this.panel_SProdukt.Size = new System.Drawing.Size(1106, 48);
+            this.panel_SProdukt.TabIndex = 0;
+            // 
+            // lbl_SProdukt
+            // 
+            this.lbl_SProdukt.AutoSize = true;
+            this.lbl_SProdukt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_SProdukt.Location = new System.Drawing.Point(3, 10);
+            this.lbl_SProdukt.Name = "lbl_SProdukt";
+            this.lbl_SProdukt.Size = new System.Drawing.Size(175, 29);
+            this.lbl_SProdukt.TabIndex = 0;
+            this.lbl_SProdukt.Text = "Produktsuche:";
+            // 
+            // cBox_SProdukte
+            // 
+            this.cBox_SProdukte.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.cBox_SProdukte.FormattingEnabled = true;
+            this.cBox_SProdukte.Location = new System.Drawing.Point(184, 7);
+            this.cBox_SProdukte.Name = "cBox_SProdukte";
+            this.cBox_SProdukte.Size = new System.Drawing.Size(270, 37);
+            this.cBox_SProdukte.TabIndex = 0;
+            this.cBox_SProdukte.SelectedIndexChanged += new System.EventHandler(this.cBox_SProdukte_SelectedIndexChanged);
+            // 
+            // panel_SChart
+            // 
+            this.panel_SChart.Controls.Add(this.chart_Stats);
+            this.panel_SChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_SChart.Location = new System.Drawing.Point(3, 57);
+            this.panel_SChart.Name = "panel_SChart";
+            this.panel_SChart.Size = new System.Drawing.Size(1106, 356);
+            this.panel_SChart.TabIndex = 1;
+            // 
+            // chart_Stats
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart_Stats.ChartAreas.Add(chartArea1);
+            this.chart_Stats.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.Name = "Legend1";
+            this.chart_Stats.Legends.Add(legend1);
+            this.chart_Stats.Location = new System.Drawing.Point(0, 0);
+            this.chart_Stats.Name = "chart_Stats";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart_Stats.Series.Add(series1);
+            this.chart_Stats.Size = new System.Drawing.Size(1106, 356);
+            this.chart_Stats.TabIndex = 0;
+            this.chart_Stats.Text = "chart1";
             // 
             // Form1
             // 
@@ -397,6 +483,12 @@
             this.panel_PVerwaltung.ResumeLayout(false);
             this.panel_PVerwaltung.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGView_PVerwaltung)).EndInit();
+            this.tPage_Stats.ResumeLayout(false);
+            this.tLPanel_Stats.ResumeLayout(false);
+            this.panel_SProdukt.ResumeLayout(false);
+            this.panel_SProdukt.PerformLayout();
+            this.panel_SChart.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart_Stats)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -428,6 +520,12 @@
         private System.Windows.Forms.Label lbl_PVSuche;
         private System.Windows.Forms.DataGridView dGView_PVerwaltung;
         private System.Windows.Forms.Button btn_PNew;
+        private System.Windows.Forms.TableLayoutPanel tLPanel_Stats;
+        private System.Windows.Forms.Panel panel_SProdukt;
+        private System.Windows.Forms.ComboBox cBox_SProdukte;
+        private System.Windows.Forms.Label lbl_SProdukt;
+        private System.Windows.Forms.Panel panel_SChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart_Stats;
     }
 }
 
