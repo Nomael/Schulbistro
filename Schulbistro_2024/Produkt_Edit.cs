@@ -28,7 +28,10 @@ namespace Schulbistro_2024
 
                 information = new Info(name, info, preis, data[0][0], data[0][1], allergen, zusatzstoffe);
 
-                showData();
+            loadComboBoxen();
+            loadListBoxen();
+
+            showData();
             
 
         }
@@ -37,7 +40,7 @@ namespace Schulbistro_2024
             txt_Name.Text = information.name;
             if (information.info == "" || information.info == null)
             {
-                txt_Name.Text = "No Info";
+                txt_Info.Text = "No Info";
             }
             else
             {
@@ -49,14 +52,43 @@ namespace Schulbistro_2024
 
             foreach (string value1 in allergen)
             {
-                listBox_Allergen.Items.Add(value1);
+                int index = listBox_Allergen.FindString(value1);    
+                    listBox_Allergen.SetItemChecked(index, true);   
             }
             foreach (string value2 in zusatzstoffe)
             {
-                listBox_Zusatzstoffe.Items.Add(value2);
+                int index = listBox_Zusatzstoffe.FindString(value2);
+                listBox_Zusatzstoffe.SetItemChecked(index, true);
             }
 
 
+        }
+        private void loadComboBoxen()
+        {
+            List<string> liste = DB.QueryToList($"SELECT kategorie.Bezeichnung FROM `kategorie` ");
+            foreach (string i in liste)
+            {
+                cBox_Kategorie.Items.Add(i);
+            }
+            liste = DB.QueryToList($"SELECT ampelstatus.Farbe FROM `ampelstatus`");
+            foreach (string i in liste)
+            {
+                cBox_Ampel.Items.Add(i);
+            }
+        }
+
+        private void loadListBoxen()
+        {
+            List<string> liste = DB.QueryToList($"SELECT allergen.Bezeichnung FROM `allergen` ");
+            foreach (string i in liste)
+            {
+                listBox_Allergen.Items.Add(i);
+            }
+            liste = DB.QueryToList($"SELECT zusatzstoff.Bezeichnung FROM `zusatzstoff`");
+            foreach (string i in liste)
+            {
+                listBox_Zusatzstoffe.Items.Add(i);
+            }
         }
 
         private void btn_Close_Click(object sender, EventArgs e)
