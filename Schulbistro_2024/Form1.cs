@@ -14,9 +14,12 @@ namespace Schulbistro_2024
 {
     public partial class Form1 : Form
     {
-        Dbase DB = new Dbase("localhost", "Schulbistro", "root", ""); 
+        Dbase DB = new Dbase("localhost", "Schulbistro", "root", "");
         Produkt_Information PInfo;
         Produkt_Creation PCrea;
+        private readonly DataGridViewButtonColumn btnInfo = new DataGridViewButtonColumn();
+        private readonly DataGridViewButtonColumn btnEdit = new DataGridViewButtonColumn();
+        private readonly DataGridViewButtonColumn btnDelete = new DataGridViewButtonColumn();
 
         string pepper = "YouAreAPepper";
 
@@ -25,16 +28,36 @@ namespace Schulbistro_2024
             InitializeComponent();
 
             setup();
-            produktsuche();
+
+            dGView_Produkte.Columns.Add(btnInfo);
+            dGView_PVerwaltung.Columns.Add(btnEdit);
+            dGView_PVerwaltung.Columns.Add(btnDelete);
+
+            produktsuche(dGView_Produkte, tBox_Search.Text);
+            produktsuche(dGView_PVerwaltung, tBox_PVSuche.Text);
         }
 
 
         public void setup()
         {
             lbl_Error.Text = "";
-            tControl_Content.TabPages.Remove(tPage_Info);
             tControl_Content.TabPages.Remove(tPage_PVerwaltung);
             tControl_Content.TabPages.Remove(tPage_Stats);
+
+            btnInfo.HeaderText = "";
+            btnInfo.Name = "btn_Info";
+            btnInfo.Text = "Info";
+            btnInfo.UseColumnTextForButtonValue = true;
+
+            btnEdit.HeaderText = "";
+            btnEdit.Name = "btn_Edit";
+            btnEdit.Text = "Edit";
+            btnEdit.UseColumnTextForButtonValue = true;
+
+            btnDelete.HeaderText = "";
+            btnDelete.Name = "btn_Delete";
+            btnDelete.Text = "Delete";
+            btnDelete.UseColumnTextForButtonValue = true;
         }
 
         private void btn_Login_Click(object sender, EventArgs e)
@@ -58,11 +81,9 @@ namespace Schulbistro_2024
 
             if (reader.HasRows)
             {
-                tControl_Content.TabPages.Add(tPage_Info);
                 tControl_Content.TabPages.Add(tPage_PVerwaltung);
                 tControl_Content.TabPages.Add(tPage_Stats);
                 tControl_Content.TabPages.Remove(tPage_Login);
-                lbl_InfoAccountName.Text = $"{reader["user"]}";
             }
             else
             {
@@ -72,25 +93,46 @@ namespace Schulbistro_2024
             connection.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            PInfo = new Produkt_Information();
-            PInfo.Show();
-        }
-
         private void btn_PNew_Click(object sender, EventArgs e)
         {
             PCrea = new Produkt_Creation();
             PCrea.Show();
         }
-        private void produktsuche()
+        private void produktsuche(DataGridView dGV, string search)
         {
-            dGView_Produkte.DataSource = DB.QueryToDataTable($"SELECT DISTINCT prudukt.Bezeichnung, prudukt.Preis FROM `prudukt` WHERE prudukt.Bezeichnung LIKE '%{tBox_Search.Text}%'");
+            string query = $"SELECT prudukt.Bezeichnung, prudukt.Preis, prudukt.info FROM `prudukt` WHERE prudukt.Bezeichnung LIKE '%{search}%'";
+            dGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dGV.DataSource = DB.QueryToDataTable(query);
         }
 
         private void tBox_Search_TextChanged(object sender, EventArgs e)
         {
-            produktsuche();
+            produktsuche(dGView_Produkte, tBox_Search.Text);
+        }
+
+        private void tBox_PVSuche_TextChanged(object sender, EventArgs e)
+        {
+            produktsuche(dGView_PVerwaltung, tBox_PVSuche.Text);
+        }
+
+        private void dGView_Produkte_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0 && e.RowIndex < dGView_Produkte.RowCount) // Info
+            {
+                MessageBox.Show($"{dGView_Produkte.Rows[e.RowIndex].Cells[1].Value}, {dGView_Produkte.Rows[e.RowIndex].Cells[2].Value}, {dGView_Produkte.Rows[e.RowIndex].Cells[3].Value}");
+            }
+        }
+
+        private void dGView_PVerwaltung_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0 && e.RowIndex < dGView_Produkte.RowCount) // Edit
+            {
+
+            }
+            else if (e.ColumnIndex == 1 && e.RowIndex < dGView_Produkte.RowCount) // Delete
+            {
+
+            }
         }
     }
 }

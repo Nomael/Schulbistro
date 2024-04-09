@@ -45,14 +45,13 @@
             this.lbl_Account = new System.Windows.Forms.Label();
             this.tBox_Account = new System.Windows.Forms.TextBox();
             this.tBox_Passwort = new System.Windows.Forms.TextBox();
-            this.tPage_Info = new System.Windows.Forms.TabPage();
-            this.lbl_InfoAccountName = new System.Windows.Forms.Label();
-            this.lbl_Info = new System.Windows.Forms.Label();
             this.tPage_PVerwaltung = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dGView_PVerwaltung = new System.Windows.Forms.DataGridView();
+            this.tLPanel_PVerwaltung = new System.Windows.Forms.TableLayoutPanel();
             this.panel_PVerwaltung = new System.Windows.Forms.Panel();
             this.btn_PNew = new System.Windows.Forms.Button();
+            this.tBox_PVSuche = new System.Windows.Forms.TextBox();
+            this.lbl_PVSuche = new System.Windows.Forms.Label();
+            this.dGView_PVerwaltung = new System.Windows.Forms.DataGridView();
             this.tPage_Stats = new System.Windows.Forms.TabPage();
             this.tLPanel_Main.SuspendLayout();
             this.panel_Header.SuspendLayout();
@@ -62,11 +61,10 @@
             this.panel_Search.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGView_Produkte)).BeginInit();
             this.tPage_Login.SuspendLayout();
-            this.tPage_Info.SuspendLayout();
             this.tPage_PVerwaltung.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGView_PVerwaltung)).BeginInit();
+            this.tLPanel_PVerwaltung.SuspendLayout();
             this.panel_PVerwaltung.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGView_PVerwaltung)).BeginInit();
             this.SuspendLayout();
             // 
             // tLPanel_Main
@@ -113,7 +111,6 @@
             // 
             this.tControl_Content.Controls.Add(this.tPage_Produktsortiment);
             this.tControl_Content.Controls.Add(this.tPage_Login);
-            this.tControl_Content.Controls.Add(this.tPage_Info);
             this.tControl_Content.Controls.Add(this.tPage_PVerwaltung);
             this.tControl_Content.Controls.Add(this.tPage_Stats);
             this.tControl_Content.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -183,14 +180,19 @@
             // 
             // dGView_Produkte
             // 
+            this.dGView_Produkte.AllowUserToAddRows = false;
+            this.dGView_Produkte.AllowUserToDeleteRows = false;
+            this.dGView_Produkte.BackgroundColor = System.Drawing.Color.White;
             this.dGView_Produkte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGView_Produkte.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dGView_Produkte.Location = new System.Drawing.Point(3, 57);
             this.dGView_Produkte.Name = "dGView_Produkte";
+            this.dGView_Produkte.ReadOnly = true;
             this.dGView_Produkte.RowHeadersWidth = 51;
             this.dGView_Produkte.RowTemplate.Height = 24;
             this.dGView_Produkte.Size = new System.Drawing.Size(1106, 356);
             this.dGView_Produkte.TabIndex = 1;
+            this.dGView_Produkte.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGView_Produkte_CellContentClick);
             // 
             // tPage_Login
             // 
@@ -238,8 +240,7 @@
             this.btn_Login.Location = new System.Drawing.Point(454, 203);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(175, 41);
-            this.btn_Login.TabIndex = 4;
-            this.btn_Login.TabStop = false;
+            this.btn_Login.TabIndex = 2;
             this.btn_Login.Text = "Login";
             this.btn_Login.UseVisualStyleBackColor = true;
             this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
@@ -262,8 +263,7 @@
             this.tBox_Account.Location = new System.Drawing.Point(562, 45);
             this.tBox_Account.Name = "tBox_Account";
             this.tBox_Account.Size = new System.Drawing.Size(228, 36);
-            this.tBox_Account.TabIndex = 2;
-            this.tBox_Account.TabStop = false;
+            this.tBox_Account.TabIndex = 0;
             // 
             // tBox_Passwort
             // 
@@ -273,44 +273,11 @@
             this.tBox_Passwort.Name = "tBox_Passwort";
             this.tBox_Passwort.PasswordChar = '*';
             this.tBox_Passwort.Size = new System.Drawing.Size(228, 36);
-            this.tBox_Passwort.TabIndex = 3;
-            this.tBox_Passwort.TabStop = false;
-            // 
-            // tPage_Info
-            // 
-            this.tPage_Info.Controls.Add(this.lbl_InfoAccountName);
-            this.tPage_Info.Controls.Add(this.lbl_Info);
-            this.tPage_Info.Location = new System.Drawing.Point(4, 27);
-            this.tPage_Info.Name = "tPage_Info";
-            this.tPage_Info.Padding = new System.Windows.Forms.Padding(3);
-            this.tPage_Info.Size = new System.Drawing.Size(1118, 422);
-            this.tPage_Info.TabIndex = 2;
-            this.tPage_Info.Text = "Info";
-            this.tPage_Info.UseVisualStyleBackColor = true;
-            // 
-            // lbl_InfoAccountName
-            // 
-            this.lbl_InfoAccountName.AutoSize = true;
-            this.lbl_InfoAccountName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_InfoAccountName.Location = new System.Drawing.Point(245, 63);
-            this.lbl_InfoAccountName.Name = "lbl_InfoAccountName";
-            this.lbl_InfoAccountName.Size = new System.Drawing.Size(72, 29);
-            this.lbl_InfoAccountName.TabIndex = 1;
-            this.lbl_InfoAccountName.Text = "None";
-            // 
-            // lbl_Info
-            // 
-            this.lbl_Info.AutoSize = true;
-            this.lbl_Info.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Info.Location = new System.Drawing.Point(42, 63);
-            this.lbl_Info.Name = "lbl_Info";
-            this.lbl_Info.Size = new System.Drawing.Size(186, 29);
-            this.lbl_Info.TabIndex = 0;
-            this.lbl_Info.Text = "Angemeldet als:";
+            this.tBox_Passwort.TabIndex = 1;
             // 
             // tPage_PVerwaltung
             // 
-            this.tPage_PVerwaltung.Controls.Add(this.tableLayoutPanel1);
+            this.tPage_PVerwaltung.Controls.Add(this.tLPanel_PVerwaltung);
             this.tPage_PVerwaltung.Location = new System.Drawing.Point(4, 27);
             this.tPage_PVerwaltung.Name = "tPage_PVerwaltung";
             this.tPage_PVerwaltung.Padding = new System.Windows.Forms.Padding(3);
@@ -319,52 +286,82 @@
             this.tPage_PVerwaltung.Text = "Produkt Verwaltung";
             this.tPage_PVerwaltung.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel1
+            // tLPanel_PVerwaltung
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.dGView_PVerwaltung, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel_PVerwaltung, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1112, 416);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // dGView_PVerwaltung
-            // 
-            this.dGView_PVerwaltung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGView_PVerwaltung.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGView_PVerwaltung.Location = new System.Drawing.Point(3, 64);
-            this.dGView_PVerwaltung.Name = "dGView_PVerwaltung";
-            this.dGView_PVerwaltung.RowHeadersWidth = 51;
-            this.dGView_PVerwaltung.RowTemplate.Height = 24;
-            this.dGView_PVerwaltung.Size = new System.Drawing.Size(1106, 356);
-            this.dGView_PVerwaltung.TabIndex = 5;
+            this.tLPanel_PVerwaltung.ColumnCount = 1;
+            this.tLPanel_PVerwaltung.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tLPanel_PVerwaltung.Controls.Add(this.panel_PVerwaltung, 0, 0);
+            this.tLPanel_PVerwaltung.Controls.Add(this.dGView_PVerwaltung, 0, 1);
+            this.tLPanel_PVerwaltung.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tLPanel_PVerwaltung.Location = new System.Drawing.Point(3, 3);
+            this.tLPanel_PVerwaltung.Name = "tLPanel_PVerwaltung";
+            this.tLPanel_PVerwaltung.RowCount = 2;
+            this.tLPanel_PVerwaltung.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tLPanel_PVerwaltung.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tLPanel_PVerwaltung.Size = new System.Drawing.Size(1112, 416);
+            this.tLPanel_PVerwaltung.TabIndex = 1;
             // 
             // panel_PVerwaltung
             // 
             this.panel_PVerwaltung.Controls.Add(this.btn_PNew);
+            this.panel_PVerwaltung.Controls.Add(this.tBox_PVSuche);
+            this.panel_PVerwaltung.Controls.Add(this.lbl_PVSuche);
             this.panel_PVerwaltung.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_PVerwaltung.Location = new System.Drawing.Point(3, 3);
             this.panel_PVerwaltung.Name = "panel_PVerwaltung";
-            this.panel_PVerwaltung.Size = new System.Drawing.Size(1106, 55);
-            this.panel_PVerwaltung.TabIndex = 4;
+            this.panel_PVerwaltung.Size = new System.Drawing.Size(1106, 48);
+            this.panel_PVerwaltung.TabIndex = 0;
             // 
             // btn_PNew
             // 
-            this.btn_PNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btn_PNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_PNew.Location = new System.Drawing.Point(449, 12);
+            this.btn_PNew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_PNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_PNew.Location = new System.Drawing.Point(846, 7);
             this.btn_PNew.Name = "btn_PNew";
-            this.btn_PNew.Size = new System.Drawing.Size(215, 30);
-            this.btn_PNew.TabIndex = 3;
-            this.btn_PNew.Text = "Produkt erstellen";
+            this.btn_PNew.Size = new System.Drawing.Size(257, 35);
+            this.btn_PNew.TabIndex = 5;
+            this.btn_PNew.TabStop = false;
+            this.btn_PNew.Text = "Produkt Erstellen";
             this.btn_PNew.UseVisualStyleBackColor = true;
             this.btn_PNew.Click += new System.EventHandler(this.btn_PNew_Click);
+            // 
+            // tBox_PVSuche
+            // 
+            this.tBox_PVSuche.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBox_PVSuche.Location = new System.Drawing.Point(184, 7);
+            this.tBox_PVSuche.Name = "tBox_PVSuche";
+            this.tBox_PVSuche.Size = new System.Drawing.Size(216, 36);
+            this.tBox_PVSuche.TabIndex = 1;
+            this.tBox_PVSuche.TabStop = false;
+            this.tBox_PVSuche.TextChanged += new System.EventHandler(this.tBox_PVSuche_TextChanged);
+            // 
+            // lbl_PVSuche
+            // 
+            this.lbl_PVSuche.AutoSize = true;
+            this.lbl_PVSuche.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PVSuche.Location = new System.Drawing.Point(3, 10);
+            this.lbl_PVSuche.Name = "lbl_PVSuche";
+            this.lbl_PVSuche.Size = new System.Drawing.Size(175, 29);
+            this.lbl_PVSuche.TabIndex = 0;
+            this.lbl_PVSuche.Text = "Produktsuche:";
+            // 
+            // dGView_PVerwaltung
+            // 
+            this.dGView_PVerwaltung.AllowUserToAddRows = false;
+            this.dGView_PVerwaltung.AllowUserToDeleteRows = false;
+            this.dGView_PVerwaltung.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dGView_PVerwaltung.BackgroundColor = System.Drawing.Color.White;
+            this.dGView_PVerwaltung.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dGView_PVerwaltung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGView_PVerwaltung.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dGView_PVerwaltung.Location = new System.Drawing.Point(3, 57);
+            this.dGView_PVerwaltung.Name = "dGView_PVerwaltung";
+            this.dGView_PVerwaltung.ReadOnly = true;
+            this.dGView_PVerwaltung.RowHeadersWidth = 51;
+            this.dGView_PVerwaltung.RowTemplate.Height = 24;
+            this.dGView_PVerwaltung.Size = new System.Drawing.Size(1106, 356);
+            this.dGView_PVerwaltung.TabIndex = 1;
+            this.dGView_PVerwaltung.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGView_PVerwaltung_CellContentClick);
             // 
             // tPage_Stats
             // 
@@ -395,12 +392,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGView_Produkte)).EndInit();
             this.tPage_Login.ResumeLayout(false);
             this.tPage_Login.PerformLayout();
-            this.tPage_Info.ResumeLayout(false);
-            this.tPage_Info.PerformLayout();
             this.tPage_PVerwaltung.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dGView_PVerwaltung)).EndInit();
+            this.tLPanel_PVerwaltung.ResumeLayout(false);
             this.panel_PVerwaltung.ResumeLayout(false);
+            this.panel_PVerwaltung.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGView_PVerwaltung)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -413,7 +409,6 @@
         private System.Windows.Forms.TabControl tControl_Content;
         private System.Windows.Forms.TabPage tPage_Produktsortiment;
         private System.Windows.Forms.TabPage tPage_Login;
-        private System.Windows.Forms.TabPage tPage_Info;
         private System.Windows.Forms.TabPage tPage_PVerwaltung;
         private System.Windows.Forms.TabPage tPage_Stats;
         private System.Windows.Forms.TableLayoutPanel tLPanel_Produkte;
@@ -426,13 +421,13 @@
         private System.Windows.Forms.TextBox tBox_Account;
         private System.Windows.Forms.Label lbl_Passwort;
         private System.Windows.Forms.Label lbl_Account;
-        private System.Windows.Forms.Label lbl_Info;
-        private System.Windows.Forms.Label lbl_InfoAccountName;
         private System.Windows.Forms.Label lbl_Error;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tLPanel_PVerwaltung;
         private System.Windows.Forms.Panel panel_PVerwaltung;
-        private System.Windows.Forms.Button btn_PNew;
+        private System.Windows.Forms.TextBox tBox_PVSuche;
+        private System.Windows.Forms.Label lbl_PVSuche;
         private System.Windows.Forms.DataGridView dGView_PVerwaltung;
+        private System.Windows.Forms.Button btn_PNew;
     }
 }
 
