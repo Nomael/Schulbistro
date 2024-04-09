@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,8 @@ namespace Schulbistro_2024
             InitializeComponent();
 
             loadComboBoxen();
+            loadListBoxen();
+            
         }
 
         private void btn_Close_Click(object sender, EventArgs e)
@@ -28,7 +31,7 @@ namespace Schulbistro_2024
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-
+            CreateProdukt();
         }
 
         private void loadComboBoxen()
@@ -43,6 +46,35 @@ namespace Schulbistro_2024
             {
                cBox_Ampel.Items.Add(i);
             }
+        }
+
+        private void loadListBoxen()
+        {
+            List<string> liste = DB.QueryToList($"SELECT allergen.Bezeichnung FROM `allergen` ");
+            foreach (string i in liste)
+            {
+                listBox_Allergen.Items.Add(i);
+            }
+            liste = DB.QueryToList($"SELECT zusatzstoff.Bezeichnung FROM `zusatzstoff`");
+            foreach(string i in liste)
+            {
+                listBox_Zusatzstoffe.Items.Add(i);
+            }
+        }
+        //INSERT INTO `prudukt`(`P_Nr`, `Bezeichnung`, `info`, `Preis`, `Kat_ID`, `Status_ID`) VALUES(24,'Test','Test','1.50','1','1')
+        private void CreateProdukt()
+        {
+            int i = Convert.ToInt32(DB.QueryString($"SELECT MAX(prudukt.P_Nr)+1 FROM prudukt"));
+            string hinzufügen;
+            hinzufügen = $"INSERT INTO `prudukt`(`P_Nr`, `Bezeichnung`, `info`, `Preis`, `Kat_ID`, `Status_ID`) VALUES('{i}', '{txt_Name.Text}', '{txt_Info.Text}', '{txt_Preis.Text}', '{cBox_Kategorie.SelectedIndex +1}', '{cBox_Ampel.SelectedIndex +1}')";
+            Debug.WriteLine(hinzufügen);
+            DB.ExecuteQuery(hinzufügen);
+            hinzufügen = $"INSERT INTO `allergeninprodukt`(`P_Nr`, `A_ID`) VALUES ('{i}','{listBox_Allergen.SelectedIndex +1}')";
+            Debug.WriteLine(hinzufügen);
+            DB.ExecuteQuery(hinzufügen);
+            hinzufügen = $"INSERT INTO `zusatzstoffinprodukt`(`P_Nr`, `Z_ID`) VALUES ('{i}','{listBox_Zusatzstoffe.SelectedIndex + 1}')";
+            Debug.WriteLine(hinzufügen);
+            DB.ExecuteQuery(hinzufügen);
         }
     }
 }
