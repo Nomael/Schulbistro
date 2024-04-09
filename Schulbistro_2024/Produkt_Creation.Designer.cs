@@ -37,7 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cBox_Kategorie = new System.Windows.Forms.ComboBox();
             this.lbl_Kategorie = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cBox_Ampel = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.listBox_Allergen = new System.Windows.Forms.CheckedListBox();
             this.listBox_Zusatzstoffe = new System.Windows.Forms.CheckedListBox();
@@ -123,13 +123,13 @@
             this.lbl_Kategorie.TabIndex = 10;
             this.lbl_Kategorie.Text = "Kategorie:";
             // 
-            // comboBox1
+            // cBox_Ampel
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(95, 184);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(146, 24);
-            this.comboBox1.TabIndex = 11;
+            this.cBox_Ampel.FormattingEnabled = true;
+            this.cBox_Ampel.Location = new System.Drawing.Point(95, 184);
+            this.cBox_Ampel.Name = "cBox_Ampel";
+            this.cBox_Ampel.Size = new System.Drawing.Size(146, 24);
+            this.cBox_Ampel.TabIndex = 11;
             // 
             // label4
             // 
@@ -195,7 +195,7 @@
             this.Controls.Add(this.listBox_Zusatzstoffe);
             this.Controls.Add(this.listBox_Allergen);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cBox_Ampel);
             this.Controls.Add(this.lbl_Kategorie);
             this.Controls.Add(this.cBox_Kategorie);
             this.Controls.Add(this.label3);
@@ -224,7 +224,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cBox_Kategorie;
         private System.Windows.Forms.Label lbl_Kategorie;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cBox_Ampel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckedListBox listBox_Allergen;
         private System.Windows.Forms.CheckedListBox listBox_Zusatzstoffe;
