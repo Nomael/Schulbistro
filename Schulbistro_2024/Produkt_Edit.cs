@@ -22,7 +22,7 @@ namespace Schulbistro_2024
         {
             InitializeComponent();
            
-                data = DB.QueryToArrayList($"SELECT prudukt.info, kategorie.Bezeichnung, ampelstatus.Farbe FROM prudukt, kategorie, ampelstatus WHERE prudukt.Bezeichnung = '{name}' AND prudukt.info = '{info}' AND prudukt.Kat_ID = kategorie.Kat_ID AND prudukt.Status_ID = ampelstatus.Status_ID;");
+                data = DB.QueryToArrayList($"SELECT kategorie.Bezeichnung, ampelstatus.Farbe FROM prudukt, kategorie, ampelstatus WHERE prudukt.Bezeichnung = '{name}' AND prudukt.info = '{info}' AND prudukt.Kat_ID = kategorie.Kat_ID AND prudukt.Status_ID = ampelstatus.Status_ID;");
                 allergen = DB.QueryToList($"SELECT allergen.Bezeichnung from allergen, allergeninprodukt, prudukt where prudukt.Bezeichnung = '{name}' AND prudukt.info = '{info}' AND prudukt.P_Nr = allergeninprodukt.P_Nr AND allergeninprodukt.A_ID = allergen.A_ID");
                 zusatzstoffe = DB.QueryToList($"SELECT zusatzstoff.Bezeichnung from zusatzstoff, zusatzstoffinprodukt, prudukt where prudukt.Bezeichnung = '{name}' AND prudukt.info = '{info}' AND prudukt.P_Nr = zusatzstoffinprodukt.P_Nr AND zusatzstoffinprodukt.Z_ID = zusatzstoff.Z_ID");
 
