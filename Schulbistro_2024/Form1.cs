@@ -151,8 +151,16 @@ namespace Schulbistro_2024
 
         private void cBox_SProdukte_SelectedIndexChanged(object sender, EventArgs e)
         {
+            chart_Stats.Series[0].Points.Clear();
+            string[] chartZerlegt;
             chart = DB.QueryToArrayList($"SELECT verkaufsstatistik.Datum, verkaufsstatistik.Verkaufsmenge FROM verkaufsstatistik, prudukt WHERE prudukt.P_Nr = '{cBox_SProdukte.SelectedIndex + 1}' AND prudukt.P_Nr = verkaufsstatistik.P_Nr;");
-            MessageBox.Show(chart[0][0] + "|" + chart[0][1]);
+            //MessageBox.Show(chart[0][0] + "|" + chart[0][1]);
+            
+            for (int i = 0; i < chart.Count; i++)
+            {
+                chartZerlegt = chart[i][0].Split(' ');
+                chart_Stats.Series[0].Points.AddXY(chartZerlegt[0], chart[i][1]);
+            }
         }
     }
 }
