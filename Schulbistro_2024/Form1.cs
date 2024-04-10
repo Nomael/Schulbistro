@@ -131,7 +131,7 @@ namespace Schulbistro_2024
 
         private void dGView_PVerwaltung_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0 && e.RowIndex < dGView_Produkte.RowCount) // Edit
+            if (e.ColumnIndex == 0 && e.RowIndex < dGView_PVerwaltung.RowCount) // Edit
             {
                 //MessageBox.Show((e.RowIndex + 1).ToString());
                 PEdit = new Produkt_Edit((e.RowIndex + 1), dGView_PVerwaltung.Rows[e.RowIndex].Cells[1].Value.ToString(), dGView_PVerwaltung.Rows[e.RowIndex].Cells[2].Value.ToString(), dGView_PVerwaltung.Rows[e.RowIndex].Cells[3].Value.ToString());
