@@ -104,7 +104,7 @@ namespace Schulbistro_2024
         }
         private void produktsuche(DataGridView dGV, string search)
         {
-            string query = $"SELECT prudukt.Bezeichnung, prudukt.info AS Info, prudukt.Preis FROM `prudukt` WHERE prudukt.Bezeichnung LIKE '%{search}%'";
+            string query = $"SELECT prudukt.Bezeichnung, prudukt.info AS Info, prudukt.Preis, ampelstatus.Farbe AS 'Nutri-Score' FROM prudukt, ampelstatus WHERE prudukt.Bezeichnung LIKE '%{search}%' and prudukt.Status_ID = ampelstatus.Status_ID; ";
             dGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dGV.DataSource = DB.QueryToDataTable(query);
         }
