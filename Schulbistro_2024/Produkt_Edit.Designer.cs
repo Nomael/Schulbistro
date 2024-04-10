@@ -78,7 +78,7 @@
             // listBox_Zusatzstoffe
             // 
             this.listBox_Zusatzstoffe.FormattingEnabled = true;
-            this.listBox_Zusatzstoffe.Location = new System.Drawing.Point(93, 405);
+            this.listBox_Zusatzstoffe.Location = new System.Drawing.Point(104, 405);
             this.listBox_Zusatzstoffe.Name = "listBox_Zusatzstoffe";
             this.listBox_Zusatzstoffe.Size = new System.Drawing.Size(145, 123);
             this.listBox_Zusatzstoffe.TabIndex = 30;
@@ -86,7 +86,7 @@
             // listBox_Allergen
             // 
             this.listBox_Allergen.FormattingEnabled = true;
-            this.listBox_Allergen.Location = new System.Drawing.Point(94, 244);
+            this.listBox_Allergen.Location = new System.Drawing.Point(105, 244);
             this.listBox_Allergen.Name = "listBox_Allergen";
             this.listBox_Allergen.Size = new System.Drawing.Size(145, 123);
             this.listBox_Allergen.TabIndex = 29;
@@ -104,7 +104,7 @@
             // 
             this.cBox_Ampel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBox_Ampel.FormattingEnabled = true;
-            this.cBox_Ampel.Location = new System.Drawing.Point(93, 181);
+            this.cBox_Ampel.Location = new System.Drawing.Point(104, 181);
             this.cBox_Ampel.Name = "cBox_Ampel";
             this.cBox_Ampel.Size = new System.Drawing.Size(146, 24);
             this.cBox_Ampel.TabIndex = 27;
@@ -122,7 +122,7 @@
             // 
             this.cBox_Kategorie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBox_Kategorie.FormattingEnabled = true;
-            this.cBox_Kategorie.Location = new System.Drawing.Point(93, 123);
+            this.cBox_Kategorie.Location = new System.Drawing.Point(104, 123);
             this.cBox_Kategorie.Name = "cBox_Kategorie";
             this.cBox_Kategorie.Size = new System.Drawing.Size(146, 24);
             this.cBox_Kategorie.TabIndex = 25;
@@ -138,14 +138,14 @@
             // 
             // txt_Preis
             // 
-            this.txt_Preis.Location = new System.Drawing.Point(93, 63);
+            this.txt_Preis.Location = new System.Drawing.Point(104, 63);
             this.txt_Preis.Name = "txt_Preis";
             this.txt_Preis.Size = new System.Drawing.Size(145, 22);
             this.txt_Preis.TabIndex = 23;
             // 
             // txt_Info
             // 
-            this.txt_Info.Location = new System.Drawing.Point(93, 35);
+            this.txt_Info.Location = new System.Drawing.Point(104, 35);
             this.txt_Info.Name = "txt_Info";
             this.txt_Info.Size = new System.Drawing.Size(145, 22);
             this.txt_Info.TabIndex = 22;
@@ -161,7 +161,7 @@
             // 
             // txt_Name
             // 
-            this.txt_Name.Location = new System.Drawing.Point(93, 7);
+            this.txt_Name.Location = new System.Drawing.Point(104, 7);
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.Size = new System.Drawing.Size(145, 22);
             this.txt_Name.TabIndex = 20;
