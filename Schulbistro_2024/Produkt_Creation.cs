@@ -41,11 +41,13 @@ namespace Schulbistro_2024
             {
                 cBox_Kategorie.Items.Add(i);
             }
+            cBox_Kategorie.SelectedIndex = 1;
             liste = DB.QueryToList($"SELECT ampelstatus.Farbe FROM `ampelstatus`");
             foreach (string i in liste)
             {
                cBox_Ampel.Items.Add(i);
             }
+            cBox_Ampel.SelectedIndex = 1;
         }
 
         private void loadListBoxen()
