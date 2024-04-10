@@ -18,7 +18,7 @@ namespace Schulbistro_2024
         List<string> allergen = new List<string>();
         List<string> zusatzstoffe = new List<string>();
 
-        public Produkt_Edit(string name, string info, string preis)
+        public Produkt_Edit(int pID, string name, string info, string preis)
         {
             InitializeComponent();
            
