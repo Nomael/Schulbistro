@@ -23,7 +23,6 @@ namespace Schulbistro_2024
         Produkt_Edit PEdit;
         private readonly DataGridViewButtonColumn btnInfo = new DataGridViewButtonColumn();
         private readonly DataGridViewButtonColumn btnEdit = new DataGridViewButtonColumn();
-        private readonly DataGridViewButtonColumn btnDelete = new DataGridViewButtonColumn();
 
         string pepper = "YouAreAPepper";
 
@@ -54,15 +53,9 @@ namespace Schulbistro_2024
             btnEdit.Text = "Edit";
             btnEdit.UseColumnTextForButtonValue = true;
 
-            btnDelete.HeaderText = "";
-            btnDelete.Name = "btn_Delete";
-            btnDelete.Text = "Delete";
-            btnDelete.UseColumnTextForButtonValue = true;
-
 
             dGView_Produkte.Columns.Add(btnInfo);
             dGView_PVerwaltung.Columns.Add(btnEdit);
-            dGView_PVerwaltung.Columns.Add(btnDelete);
 
             produktsuche(dGView_Produkte, tBox_Search.Text);
             produktsuche(dGView_PVerwaltung, tBox_PVSuche.Text);
@@ -142,10 +135,6 @@ namespace Schulbistro_2024
             {
                 PEdit = new Produkt_Edit(dGView_Produkte.Rows[e.RowIndex].Cells[1].Value.ToString(), dGView_Produkte.Rows[e.RowIndex].Cells[2].Value.ToString(), dGView_Produkte.Rows[e.RowIndex].Cells[3].Value.ToString());
                 PEdit.Show();
-            }
-            else if (e.ColumnIndex == 1 && e.RowIndex < dGView_Produkte.RowCount) // Delete
-            {
-
             }
         }
 
