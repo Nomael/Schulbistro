@@ -57,11 +57,11 @@
             this.dGView_PVerwaltung = new System.Windows.Forms.DataGridView();
             this.tPage_Stats = new System.Windows.Forms.TabPage();
             this.tLPanel_Stats = new System.Windows.Forms.TableLayoutPanel();
-            this.panel_SProdukt = new System.Windows.Forms.Panel();
-            this.lbl_SProdukt = new System.Windows.Forms.Label();
-            this.cBox_SProdukte = new System.Windows.Forms.ComboBox();
             this.panel_SChart = new System.Windows.Forms.Panel();
             this.chart_Stats = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel_SProdukt = new System.Windows.Forms.Panel();
+            this.cBox_SProdukte = new System.Windows.Forms.ComboBox();
+            this.lbl_SProdukt = new System.Windows.Forms.Label();
             this.tLPanel_Main.SuspendLayout();
             this.panel_Header.SuspendLayout();
             this.tControl_Content.SuspendLayout();
@@ -76,9 +76,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGView_PVerwaltung)).BeginInit();
             this.tPage_Stats.SuspendLayout();
             this.tLPanel_Stats.SuspendLayout();
-            this.panel_SProdukt.SuspendLayout();
             this.panel_SChart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_Stats)).BeginInit();
+            this.panel_SProdukt.SuspendLayout();
             this.SuspendLayout();
             // 
             // tLPanel_Main
@@ -403,36 +403,6 @@
             this.tLPanel_Stats.Size = new System.Drawing.Size(1112, 416);
             this.tLPanel_Stats.TabIndex = 1;
             // 
-            // panel_SProdukt
-            // 
-            this.panel_SProdukt.Controls.Add(this.cBox_SProdukte);
-            this.panel_SProdukt.Controls.Add(this.lbl_SProdukt);
-            this.panel_SProdukt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_SProdukt.Location = new System.Drawing.Point(3, 3);
-            this.panel_SProdukt.Name = "panel_SProdukt";
-            this.panel_SProdukt.Size = new System.Drawing.Size(1106, 48);
-            this.panel_SProdukt.TabIndex = 0;
-            // 
-            // lbl_SProdukt
-            // 
-            this.lbl_SProdukt.AutoSize = true;
-            this.lbl_SProdukt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_SProdukt.Location = new System.Drawing.Point(3, 10);
-            this.lbl_SProdukt.Name = "lbl_SProdukt";
-            this.lbl_SProdukt.Size = new System.Drawing.Size(175, 29);
-            this.lbl_SProdukt.TabIndex = 0;
-            this.lbl_SProdukt.Text = "Produktsuche:";
-            // 
-            // cBox_SProdukte
-            // 
-            this.cBox_SProdukte.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.cBox_SProdukte.FormattingEnabled = true;
-            this.cBox_SProdukte.Location = new System.Drawing.Point(184, 7);
-            this.cBox_SProdukte.Name = "cBox_SProdukte";
-            this.cBox_SProdukte.Size = new System.Drawing.Size(270, 37);
-            this.cBox_SProdukte.TabIndex = 0;
-            this.cBox_SProdukte.SelectedIndexChanged += new System.EventHandler(this.cBox_SProdukte_SelectedIndexChanged);
-            // 
             // panel_SChart
             // 
             this.panel_SChart.Controls.Add(this.chart_Stats);
@@ -458,6 +428,37 @@
             this.chart_Stats.Size = new System.Drawing.Size(1106, 356);
             this.chart_Stats.TabIndex = 0;
             this.chart_Stats.Text = "chart1";
+            // 
+            // panel_SProdukt
+            // 
+            this.panel_SProdukt.Controls.Add(this.cBox_SProdukte);
+            this.panel_SProdukt.Controls.Add(this.lbl_SProdukt);
+            this.panel_SProdukt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_SProdukt.Location = new System.Drawing.Point(3, 3);
+            this.panel_SProdukt.Name = "panel_SProdukt";
+            this.panel_SProdukt.Size = new System.Drawing.Size(1106, 48);
+            this.panel_SProdukt.TabIndex = 0;
+            // 
+            // cBox_SProdukte
+            // 
+            this.cBox_SProdukte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBox_SProdukte.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.cBox_SProdukte.FormattingEnabled = true;
+            this.cBox_SProdukte.Location = new System.Drawing.Point(184, 7);
+            this.cBox_SProdukte.Name = "cBox_SProdukte";
+            this.cBox_SProdukte.Size = new System.Drawing.Size(270, 37);
+            this.cBox_SProdukte.TabIndex = 0;
+            this.cBox_SProdukte.SelectedIndexChanged += new System.EventHandler(this.cBox_SProdukte_SelectedIndexChanged);
+            // 
+            // lbl_SProdukt
+            // 
+            this.lbl_SProdukt.AutoSize = true;
+            this.lbl_SProdukt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_SProdukt.Location = new System.Drawing.Point(3, 10);
+            this.lbl_SProdukt.Name = "lbl_SProdukt";
+            this.lbl_SProdukt.Size = new System.Drawing.Size(175, 29);
+            this.lbl_SProdukt.TabIndex = 0;
+            this.lbl_SProdukt.Text = "Produktsuche:";
             // 
             // Form1
             // 
@@ -485,10 +486,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGView_PVerwaltung)).EndInit();
             this.tPage_Stats.ResumeLayout(false);
             this.tLPanel_Stats.ResumeLayout(false);
-            this.panel_SProdukt.ResumeLayout(false);
-            this.panel_SProdukt.PerformLayout();
             this.panel_SChart.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart_Stats)).EndInit();
+            this.panel_SProdukt.ResumeLayout(false);
+            this.panel_SProdukt.PerformLayout();
             this.ResumeLayout(false);
 
         }

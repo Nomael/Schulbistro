@@ -108,6 +108,7 @@
             // 
             // cBox_Kategorie
             // 
+            this.cBox_Kategorie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBox_Kategorie.FormattingEnabled = true;
             this.cBox_Kategorie.Location = new System.Drawing.Point(95, 126);
             this.cBox_Kategorie.Name = "cBox_Kategorie";
@@ -125,6 +126,7 @@
             // 
             // cBox_Ampel
             // 
+            this.cBox_Ampel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBox_Ampel.FormattingEnabled = true;
             this.cBox_Ampel.Location = new System.Drawing.Point(95, 184);
             this.cBox_Ampel.Name = "cBox_Ampel";
