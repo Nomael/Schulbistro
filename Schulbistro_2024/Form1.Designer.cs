@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tLPanel_Main = new System.Windows.Forms.TableLayoutPanel();
             this.panel_Header = new System.Windows.Forms.Panel();
             this.lbl_HeadName = new System.Windows.Forms.Label();
@@ -414,17 +414,17 @@
             // 
             // chart_Stats
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart_Stats.ChartAreas.Add(chartArea1);
+            chartArea2.Name = "ChartArea1";
+            this.chart_Stats.ChartAreas.Add(chartArea2);
             this.chart_Stats.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chart_Stats.Legends.Add(legend1);
+            legend2.Name = "Legend1";
+            this.chart_Stats.Legends.Add(legend2);
             this.chart_Stats.Location = new System.Drawing.Point(0, 0);
             this.chart_Stats.Name = "chart_Stats";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart_Stats.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart_Stats.Series.Add(series2);
             this.chart_Stats.Size = new System.Drawing.Size(1106, 356);
             this.chart_Stats.TabIndex = 0;
             this.chart_Stats.Text = "chart1";
@@ -444,7 +444,7 @@
             this.cBox_SProdukte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBox_SProdukte.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.cBox_SProdukte.FormattingEnabled = true;
-            this.cBox_SProdukte.Location = new System.Drawing.Point(184, 7);
+            this.cBox_SProdukte.Location = new System.Drawing.Point(109, 7);
             this.cBox_SProdukte.Name = "cBox_SProdukte";
             this.cBox_SProdukte.Size = new System.Drawing.Size(270, 37);
             this.cBox_SProdukte.TabIndex = 0;
@@ -456,9 +456,9 @@
             this.lbl_SProdukt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_SProdukt.Location = new System.Drawing.Point(3, 10);
             this.lbl_SProdukt.Name = "lbl_SProdukt";
-            this.lbl_SProdukt.Size = new System.Drawing.Size(175, 29);
+            this.lbl_SProdukt.Size = new System.Drawing.Size(100, 29);
             this.lbl_SProdukt.TabIndex = 0;
-            this.lbl_SProdukt.Text = "Produktsuche:";
+            this.lbl_SProdukt.Text = "Produk:";
             // 
             // Form1
             // 
